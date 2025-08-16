@@ -1,0 +1,46 @@
+{
+    "save_freq": 20, 模型保存的频率
+    "batch_size": 32,  训练批次
+    "lr": 3e-4,        学习率
+    "num_epochs": 1000, 训练的次数
+    "hidden_dim": 256,  所有神经网络隐藏层的维度
+    "enc_length": 36,   观测窗口的长度
+    "dec_length": 72,   预测窗口的长度
+    "dropout": 0.2,     丢弃率，防止过拟合
+    "att_dropout": 0.1, attention结构的丢弃率
+    "num_channels": [64, 128, 256],  TCN网络通道数，即特征维度
+    "num_head": 8,  注意力机制的头数量，包括图注意力
+    "num_layer": 2,  神经网络层数，包括所有attention网络架构的神经网络
+    "train_input_dim": 4,  列车节点初始特征维度
+    "earth_input_dim": 3,  桥墩节点初始特征维度
+    "alpha": 0.1,  Elu对应的alpha
+    "input_dim": 4,  LSTM以及TCN一些不用图神经网络输入的维度，即列车节点的特征
+    "obs_dim": 4,  输出观测窗口维度尺寸
+    "mode": "norm",  attention的模式选择，有prob和norm对应稀疏注意力和普通注意力
+    "hidden_L": 64,  TCN或者LSTM等一些输出无法改变长度的神经网络通过ChangeL对应的隐藏出长度，其实就是隐藏通道数
+    "individual": 1,  PatchTST的预测头是否采用通道独立计算输出的长度
+    "share_embedding": 0, PatchTST的Embedding是单独编码还是独自编码
+    "patch_len": 12,  PatchTST的patch_len,即特征长度
+    "patch_stride": 6,  PatchTST的patch_stride
+    "pos_mode": "sincos",  # 位置编码的形式，存在两种"sincos"和"learnable"即固定编码和可学习编码
+    "scale_learn": 0,  # 注意力机制的缩放系数sqrt(d)，是固定还是可以学习
+    "whether_distill": 1  # GATtention是否采用DistillBlock进行时序长度蒸馏
+     "res_att": 1  # 残差注意力
+     "gat": 0.8,  # 门控系数
+    "learn_gat": 0  # 为1，门控系数可学习  为0，不需要学习，通过线性层学习获得
+    "k": 4  #  选取地震波前K的频率
+    "lower_channel_dim": 8  # patchTsT降低通道数后的维度
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
