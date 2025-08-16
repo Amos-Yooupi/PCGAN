@@ -34,9 +34,17 @@ To further optimize temporal processing, we introduce a **channel attention mech
 - **Residual attention module** to mitigate vanishing gradient problem
 - **Optimized computation** by focusing on relevant nodes for prediction
 
-## Installation
+## 1. Model
 
-To install the required dependencies, run:
+In this section, the figure illustrates the structure of the PCGAN model. It uses Graph Neural Networks (GNNs) and time series modeling techniques to handle the prediction of responses in complex structural systems. The model first preprocesses the input data and then uses a graph structure to capture the spatial coupling relationships between the system components (such as train carriages, bridge parts, etc.). It then applies the Patch-based Channel-wise Attention mechanism to extract important features from the time series for accurate long-term response predictions. Overall, this model combines graph attention and temporal attention mechanisms, providing an efficient and precise solution for structural response prediction.
 
-```bash
-pip install -r requirements.txt
+
+![Train Bridge](figures/model.png)
+
+
+## 2. Uncertainty Modelling
+
+This section demonstrates how PCGAN performs uncertainty modeling. By using latent states and KL divergence constraints, the model not only provides a deterministic prediction but also gives the uncertainty range of the prediction. This modeling approach allows the model to better handle uncertainties in complex environments (such as earthquakes or other unexpected events). The Kullback-Leibler (KL) divergence is used to quantify the uncertainty in the prediction, helping to assess the potential risk range. Using this method, PCGAN offers more reliable predictions, especially suitable for complex and dynamic engineering systems, such as the seismic response analysis of train-bridge coupled systems.
+
+
+![Train Bridge](figures/latent.png)
