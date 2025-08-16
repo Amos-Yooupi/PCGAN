@@ -4,6 +4,9 @@
 
 Predicting the long-term response of complex structural systems, such as train-bridge coupled systems (TBC), under seismic conditions presents significant challenges due to high computational complexity and time constraints. Traditional deep learning models have several limitations, such as poor generalization, difficulty adapting to different structural forms, and an inability to effectively model uncertainty. To address these challenges, we propose an innovative model—**Patch-based Channel-wise Graph Attention Network (PCGAN)**. This model represents complex structures as graphs, encoding each node and utilizing a masked attention mechanism between nodes to extract spatial topological information. At the same time, it employs a patch-based channel-wise attention mechanism to capture temporal patterns, achieving more accurate and efficient modeling of temporal information. By introducing latent states and adjusting the weighting between Kullback-Leibler (KL) divergence constraints and prediction accuracy constraints, the model can output a random range rather than a single absolute result, thereby enhancing the flexibility and reliability of the predictions.
 
+![Train Bridge](figures/tbc.jpg)
+
+
 ## Introduction
 
 Traditional seismic response analysis typically relies on physical equations and numerical simulations. While these methods are accurate, they are computationally expensive, especially for complex structures, as the required computation time and resources can be enormous. In contrast, **machine learning techniques** can automatically extract patterns from historical data by training models, enabling real-time, low-cost risk assessment and decision support in practical engineering applications. 
